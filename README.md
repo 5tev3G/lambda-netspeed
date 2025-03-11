@@ -1,3 +1,7 @@
+Welcome! This GitHub project provides a Python-based solution to containerize your application using Docker and deploy it to AWS Lambda with the AWS CLI.  Follow the instructions below to get started.
+
+This project helps analyze the network performance and implicitly, CPU power scaling of AWS Lambda functions by testing various memory configurations. Crucially, AWS Lambda's resource model ties CPU power to memory allocation; increasing memory directly increases the proportional CPU resources available to your function and affects pricing.  Therefore, understanding how network speed and compute resources scale with memory is vital for cost-effectively optimizing Lambda functions, especially those performing network-intensive tasks like data processing, API integrations, and external service interactions.
+
 This python based project will create a docker container
 and deploy it to AWS Lambda using the AWS CLI (instructions below)
 
@@ -13,13 +17,14 @@ Docker, Python3, Boto3, Virtualenv, AWS CLI
 region=us-west-2
 aws configure set region $region
 
-git clone https://github.com/jovian-temple/lambda-netspeed.git
+git clone https://github.com/5tev3G/lambda-netspeed.git
 
 cd lambda-netspeed
 
 virtualenv venv
 source venv/bin/activate
 
+; required on mac
 chmod -R o+rX .
 
 docker build -t netspeed . --provenance=false   
